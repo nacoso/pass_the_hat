@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  root 'home#welcome'
+
+
+
+  root "home#index"
+
+
 
   resources :charities
   resources :donations
