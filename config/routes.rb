@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#welcome'
+
   resources :charities
   resources :donations
   resources :user_charities
