@@ -10,7 +10,7 @@ body {
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
+  list-style-type: none;
 }
 
 pre {
@@ -69,13 +69,13 @@ div {
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
+    // background-color: #c00;
     color: #fff;
   }
 
   ul li {
-    font-size: 12px;
-    list-style: square;
+    // font-size: 12px;
+    list-style-type: none;
   }
 }
 
