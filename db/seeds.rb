@@ -23,5 +23,8 @@ end
 donation_amounts = [5, 10, 15, 25, 50]
 
 UserCharity.where(status: "favorite-donated").each do |uc|
-  uc.donations << Donation.create(amount: donation_amounts.sample)
+  Donation.create(amount: donation_amounts.sample, user_charity_id: uc.id)
 end
+
+
+puts "Izzy is awesome! :)"
