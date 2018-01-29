@@ -17,6 +17,10 @@ class DonationsController < ApplicationController
     @donation = Donation.new
   end
 
+  def new_recurring
+@donation = Donation.new
+  end
+
   # GET /donations/1/edit
   def edit
   end
