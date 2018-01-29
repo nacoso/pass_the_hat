@@ -3,57 +3,7 @@
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
-      display: flex-start;
-      flex-flow: column;
-      margin-right: 7%;
-      margin-left: 3%;
-
   }
-
-div.container-fluid, .jumbotron {
-
-    count: 1;
-    -webkit-count: 3;
-    -moz-count: 3;
-    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
-    animation: mymove 8s infinite;
-    transition-delay:1;
-    column-rule: 3;
-  }
-.btn  {
-  outline: none;
-  background-color: #b1b1b1;
-
-  width:inherit;
-  display:inherit;
-  margin: 10px;
-  margin-right: 0px;
-  align-self: navbar-right;
-  font-size: 20px;
-  font-family: 'Helvetica Neue', sans-serif;
-  border-style:none;
-  border-width: thin;
-  border-color: grey;
-  border-radius: 5%;
-  color:#e5e5e5;
-}
-
-.btn:hover {
-  color:auto;
-
-}
-
-.dropdown-menu {
-  height: 150px;
-  line-height: 2;
-  list-style: none;
-  background-color: white;
-
-
-}
-.dropdown-menu li {
-  border-width: none;
-}
 
 
   h2 {
@@ -74,15 +24,11 @@ div.container-fluid, .jumbotron {
   .jumbotron {
       background-color: #4d4d4d;
       color: #fff;
-      padding: 25%;
+      padding: 100px 25px;
       font-family: Montserrat, sans-serif;
-      min-height: 300px;
-      position:relative;
-      position:sticky;
   }
   .container-fluid {
       padding: 60px 50px;
-      column-gap: 2;
   }
   .bg-grey {
       background-color: #f6f6f6;
@@ -170,52 +116,14 @@ div.container-fluid, .jumbotron {
       background-color: #b1b1b1;
       z-index: 9999;
       border: 0;
-      font-size: 20px !important;
+      font-size: 12px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;
-      font-family:'Helvetica Neue', sans-serif;
-      height: 60px;
-      align-items: flex-end;
-      display: block;
-      font-variant: inherit;
-      align-items: flex-start;
-
-
-
+      font-family: Montserrat, sans-serif;
   }
-  .nav-bar .nav-items {
-    margin-left: 300px;
-
-  }
-
-
-.nav-link {
-  align-self: flex-end;
-  color:grey;
-  line-height: 60px;
-  font-size: 20px;
-  border-style:solid;
-  border-width: thin;
-  border-color: grey;
-  border-radius: 5%;
-
-}
-
-.nav-link:hover {
-  color:white;
-
-}
-
-
   .navbar li a, .navbar .navbar-brand {
-      color: black !important;
-      line-height: 30px;
-      border-style: none;
-      border-width: thin;
-      border-color: grey;
-      border-radius: 5%;
-
+      color: dark grey !important;
 
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -223,23 +131,13 @@ div.container-fluid, .jumbotron {
       background-color: #fff !important;
   }
   .navbar-default .navbar-toggle {
-    font-size: 20px;
-    font-family: 'Helvetica Neue', sans-serif;
-    border-style:none;
-    border-width: thin;
-    border-color: grey;
-    border-radius: 5%;
-    color:#e5e5e5;
+      border-color: transparent;
+      color: #fff !important;
   }
+  .navbar-nav .navbar-right {
+    margin-right: 20px;
   }
-  /* .dropdown-menu li a{
-    color:black;
-    border: 5px;
-    outline-color: black;
-    border-color: black;
-    border-width: thick;
 
-  } */
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
@@ -280,76 +178,242 @@ div.container-fluid, .jumbotron {
     .logo {
         font-size: 150px;
     }
-    .pagination {
-        display: inline-block;
-    }
-
-    .pagination a {
-        color: black;
-        float: left;
-        padding: 8px 16px;
-        text-decoration: none;
-        transition: background-color .3s;
-        border: 1px solid #f6f6f6;
-    }
-
-    .pagination a.active {
-        background-color: #f6f6f6;
-        color: white;
-        border: 1px solid #f6f6f6;
-    }
-
-    .pagination a:hover:not(.active) {background-color: grey;}
+  }
+  .pb-modalreglog-container
+  {
+      margin-top: 100px;
   }
 
+  .pb-modalreglog-legend
+  {
+      text-align: center;
+  }
+
+  .pb-modalreglog-input-group
+  {
+      margin: auto;
+  }
+
+  .pb-modalreglog-submit
+  {
+      margin-left: 5px;
+  }
+
+  .pb-modalreglog-form-reg
+  {
+      text-align: center;
+  }
+
+  .pb-modalreglog-footer p
+  {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  #pb-modalreglog-progressbar
+  {
+      border-radius: 2px;
+  }
   </style>
 </head>
-
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-        <nav class="navbar-fixed-top" style:"background-color:grey; height:100px;">
-        <div class="container-fluid"style="list-style:none; align-items:rows">
-        <span class="nav-links" style="margin-left:20px;margin-right:60%; margin-top:0%; margin-bottom:99%;padding-top:0px">
-          <a href="#" class="nav-link" style="font-size: 20px;
-          font-family: 'He lvetica Neue', sans-serif;
-          border-style:none;
-          border-width: thin;
-          border-color: grey;
-          border-radius: 5%;
-          color:#e5e5e5;"> Sign Up</a>
-          <a href="#" class="nav-link" style="font-size: 20px;
-          font-family: 'Helvetica Neue', sans-serif;
-          border-style:none;
-          border-width: thin;
-          border-color: grey;
-          border-radius: 5%;
-          padding-right:0px;
-          padding-left:2%;
-          color:#e5e5e5;">Login</a>
-</span>
-      <div class="navbar-fixed-top" style="list-style:none;align-items:margin-right; margin-left:75%; margin-top:0px; margin-bottom:100%; margin-top:0px; padding-top:0px;">
-      <div class="pagination dropdown">
-        <!-- <a href="#nav-links" style="color:black; font-size: 30px; line-height:1px;margin-top:0px;line-height:1;"><span class="glyphicon glyphicon-menu-up logo-small" style="color:black"></span></a><br> -->
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger logo-small" style="color:black; padding:none; background-color:none;"></span>
-        </button>
-        <ul class="dropdown-menu">
-        <li><a href="#about">ABOUT US</a></li>
-        <li role="presentation" class="divider"></li>
-        <li><a href="#CHARITIES">CHARITIES</a></li>
-        <li role="presentation" class="divider"></li>
-        <li><a href="#contact">CONTACT</a></li>
-        </ul>
+<nav class="navbar navbar-default" style="padding-top:0px; height:50px;">
+  <div class="container">
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Menu <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#about">ABOUT US</a></li>
+              <li><a href="#CHARITIES">CHARITIES</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right" style="margin-bottom: 10px;margin-top:0px;border-top:0px;margin-right: 3%">
+      <li>
+                <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
+                <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal2">Register</button>
+              </li>
+    </ul>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">Login form</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <input type="password" class="form-control" id="pws" placeholder="Password">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Log in</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">Registration form</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="pb-modalreglog-form-reg">
+                                <div class="form-group">
+                                    <div id="pb-modalreglog-progressbar"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                        <input type="password" class="form-control" id="inputPws" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmpassword">Confirm password</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                        <input type="password" class="form-control" id="inputConfirmPws" placeholder="Confirm Password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="ch" name="chs">
+                                    I agree with <a href="#">terms and conditions.</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal3" id="signup">Sign Up</button>
+</div></div>
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="document" aria-hidden="true" show="true">
+    <div class="modal-dialog modal-sm" data-backdrop="false" role="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+              <h4 class="modal-title">Choose a Plan</h4>
+            </div><div class="container"></div>
+            <div class="modal-body">
+              Content for the dialog / modal goes here.
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div class="modal-footer">
+                <span><button type="button" class="btn btn-primary" data-dismiss="modal" style="margin: 0px;;">1-time Donation</button></span>     <span><button type="button" class="btn btn-primary" style="margin-left: 0px; margin-top:0px;">Monthly Donation Plan</button></span>
+
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- <div class="modal" id="myModal3" data-backdrop="static">
+    	<div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Second Modal title</h4>
+            </div><div class="container"></div>
+            <div class="modal-body">
+              Content for the dialog / modal goes here.
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Close</a>
+              <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <script>
+    $(function () {
+        var progress = $("#pb-modalreglog-progressbar").shieldProgressBar({
+            value: 0
+        }).swidget();
+
+        $('#inputEmail').change(function () {
+            if ($('#inputEmail').val().length > 1) {
+                progress.value(progress.value() + 15);
+            } else {
+                progress.value(progress.value() - 15);
+            }
+        });
+
+        $('#inputPws').change(function () {
+            if ($('#inputPws').val().length > 1) {
+                progress.value(progress.value() + 15);
+            } else {
+                progress.value(progress.value() - 15);
+            }
+        });
+
+        $('#inputConfirmPws').change(function () {
+            if ($('#inputConfirmPws').val().length > 1) {
+                progress.value(progress.value() + 15);
+            } else {
+                progress.value(progress.value() - 15);
+            }
+        });
+$('#myModal'). modal( options).
+        $("#myModal3").on(fade, function(){
+                $("#myModal").modal("hide");
+            });
+        $('#ch').change(function () {
+            if ($('input[name="chs"]:checked').length > 0) {
+                progress.value(progress.value() + 25);
+            } else {
+                progress.value(progress.value() - 25);
+            }
+        });
 
 
-  </div>
-</div>
+    })
+  </script>
 </div>
 
 </nav>
 
-  <div class="jumbotron text-center">
+<div class="jumbotron text-center">
   <h1>Pass the Hat</h1><br>
   <p><i>charitable giving made simple</span></i></p>
 
@@ -367,7 +431,7 @@ div.container-fluid, .jumbotron {
 
   </div>
 </div>
-<br><br><br>
+
 <div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
@@ -380,7 +444,6 @@ div.container-fluid, .jumbotron {
     </div>
   </div>
 </div>
-<br><br><br>
 <div id="CHARITIES" class="container-fluid">
   <div class="text-center">
     <h2>Sample Charities</h2>
@@ -435,9 +498,9 @@ div.container-fluid, .jumbotron {
   </div>
 
 </div>
-<br><br>
+
 <div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT<br><br><br></h2>
+  <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
       <p>Contact us and we'll get back to you within 24 hours.</p>
@@ -467,8 +530,7 @@ div.container-fluid, .jumbotron {
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
-    <br>
-  </span style="color:black">Return to Top</span>
+    </span>Return to Top</span>
 </footer>
 
 <script>
