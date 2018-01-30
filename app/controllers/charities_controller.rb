@@ -17,6 +17,9 @@ class CharitiesController < ApplicationController
     @charity = Charity.new
   end
 
+  def form_recurring
+    @charity = Charity.new
+  end
   # GET /charities/1/edit
   def edit
   end
