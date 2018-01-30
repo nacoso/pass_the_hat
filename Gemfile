@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'rails', '~> 5.1.4'
 # Use postgress as the database for Active Record
 gem 'pg'
+gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
