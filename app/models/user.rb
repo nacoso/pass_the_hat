@@ -1,10 +1,6 @@
 class User < ApplicationRecord
   has_many :user_charities
 
+  # User::SUBSCRIPTION_PLANS
 
-
-  SUBSCRIPTION_PLANS = [[10, "junior"] ]
 end
-
-
-# User::SUBSCRIPTION_PLANS

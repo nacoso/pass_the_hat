@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :users
   resources :charges
 
-  devise_for :user_charities, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :charities, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
 end
