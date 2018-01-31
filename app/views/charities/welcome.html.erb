@@ -276,7 +276,7 @@ footer .glyphicon {
   <div class="container">
 
       <ul class="nav navbar-nav navbar-left">
-        <li class="dropdown"><a class="navbar-toggle" data-toggle="dropdown" href="#" id="menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <li class="dropdown"><a class="navbar-toggle" data-toggle="dropdown" href="#" id="menu"><span class="glyphicon glyphicon-menu-hamburger pull-left"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#about">ABOUT US</a></li>
               <li><a href="#CHARITIES">CHARITIES</a></li>
@@ -288,7 +288,7 @@ footer .glyphicon {
   <ul class="nav navbar-nav navbar-right" style="margin-top:10px;border-top:0px;padding-top:10px;margin-right:0px;border-right:0%;padding-bottom:10px;">
     <li>
               <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
-              <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal2">Register</button>
+
             </li>
   </ul>
           </div>
@@ -296,9 +296,7 @@ footer .glyphicon {
               <div class="modal-dialog" role="document">
                   <div class="modal-content">
                       <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;></span>
-                          </button>
+
                           <h4 class="modal-title" id="myModalLabel">Login form</h4>
                       </div>
                       <div class="modal-body">
@@ -461,10 +459,11 @@ $('#myModal'). modal( options).
 
 </nav>
 
-<div class="jumbotron text-center" id="top" style="height:450px;padding-top:150px;;">
-
+<div class="jumbotron text-center" id="top" style="height:450px;padding-top:50px;;">
+  <h1 class="jumbotron title">Why you should join our team</h1>
+<button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal4">Check out our features</button>
 <div id="about" class="container-fluid" style="margin:10%;margin-left:10%; margin-top:0px;margin-bottom:0%;" style"box-shadow: 5px 0px 100px rgba(10,5,0, .2);border-bottom-color:black">
-<button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal4">Why you should join our team</button></div></div>
+</div></div>
   <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog well"style="background-color:silver;">
           <div class="modal-header text-center">
@@ -481,13 +480,13 @@ $('#myModal'). modal( options).
                       <!-- Wrapper for slides -->
                       <div class="carousel-inner panel-lg" role="combobox"style="">
                         <div class="item active">
-                          <h2>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h2><br><br><br>
+                          <h2>Free service<br><span>No risk</span></h2><br><br><br>
                         </div>
                         <div class="item">
-                          <h2>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h2><br><br><br>
+                          <h2>Direct graphical and textual information of donations<br><span>Optional chatting capability with two-party approval</span></h2><br><br><br>
                         </div>
                         <div class="item">
-                          <h2>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h2><br><br><br>
+                          <h2>Great platform for displaying your various causes and pricing options<br><span>Direct business-to-customer communication </span></h2><br><br><br>
                         </div>
                       </div>
 
@@ -520,7 +519,7 @@ $('#myModal'). modal( options).
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>World Federation Huner</h1>
+          <h1>Red Cross</h1>
         </div>
         <div class="panel-body">
           <p><strong>20</strong> Lorem</p>
@@ -539,7 +538,7 @@ $('#myModal'). modal( options).
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Pro</h1>
+          <h1>UNICEF</h1>
         </div>
         <div class="panel-body">
           <p><strong>50</strong> Lorem</p>
@@ -558,7 +557,7 @@ $('#myModal'). modal( options).
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Premium</h1>
+          <h1>PeaceCorps</h1>
         </div>
         <div class="panel-body">
           <p><strong>100</strong> Lorem</p>
@@ -581,7 +580,8 @@ $('#myModal'). modal( options).
   <h1>Let's make a difference together</h1><br><br><br><br>
 
 <button class="btn btn-lg"><%= link_to "Become an affiliated business", "http://longrealtyimages.fnistools.com/Uploads/RECos/17/ContentFiles/affiliatedbusinessarrangementdisclosure.pdf" %></button>
-</div></button>
+</div></button><br><button class="btn btn-lg"><%= link_to "Sign up to our portal", controller: "charities", action: "new" %></button>
+</button>
 <br><br><br><br><br><br>
 
 
