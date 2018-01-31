@@ -3,7 +3,7 @@ class UserCharity < ApplicationRecord
   belongs_to :user
   belongs_to :charity
 
-  before_action :authenticate_user_charity!
+  before_commit :authenticate_user_charity!
   #further configuration for devise?
 
 end
