@@ -12,6 +12,9 @@ class CharitiesController < ApplicationController
   def show
   end
 
+  def welcome
+  end 
+
   # GET /charities/new
   def new
     @charity = Charity.new
