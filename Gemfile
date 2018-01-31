@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'omniauth'
+gem 'omniauth-stripe-connect'
+gem 'devise'
 gem 'stripe'
 gem 'jquery-rails'
 gem 'hirb', '~> 0.7.3'
@@ -12,7 +15,7 @@ gem 'hirb', '~> 0.7.3'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'rails', '~> 5.1.4'
 # Use postgress as the database for Active Record
-gem 'pg'
+gem "pg", "~> 0.18"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
