@@ -1,4 +1,7 @@
 <%= form_with(model: donation, local: true) do |form| %>
+
+
+
   <% if donation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
@@ -10,7 +13,24 @@
       </ul>
     </div>
   <% end %>
-  
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Amount: $5.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="500"
+            data-locale="auto"></script>
+
     <div class="form-group">
       <label for="exampleFormControlInput1">Email address</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -43,4 +63,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
 <% end %>
