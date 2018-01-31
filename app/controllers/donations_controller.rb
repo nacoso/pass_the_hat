@@ -35,7 +35,7 @@ class DonationsController < ApplicationController
         format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
         format.json { render :show, status: :created, location: @donation }
       else
-        format.html { render :new }
+        format.html { render :new, notice: "Oops! Donation didn't go through. Make sure you choose a charity from our options."}
         format.json { render json: @donation.errors, status: :unprocessable_entity }
       end
     end
