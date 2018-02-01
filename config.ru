@@ -2,5 +2,4 @@
 
 require_relative 'config/environment'
 require 'bootstrap-sass'
-
 run Rails.application
