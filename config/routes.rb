@@ -6,14 +6,17 @@ Rails.application.routes.draw do
   get 'charities/welcome' => "charities#welcome"
   get 'donations/recurring' => "donations#new_recurring", as: "new_recurring"
   get 'charities/new-' => "charities#form_recurring", as: "form_recurring"
+
   resources :charities
   resources :donations
   resources :user_charities
   resources :users
   resources :sessions
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- post 'login' => 'sessions#create'
   resources :charges
-
+  
+  post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  devise_for :charities, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
 end

@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180201042508) do
+ 
+  enable_extension "plpgsql"
 
   create_table "charities", force: :cascade do |t|
     t.string "name"
@@ -20,13 +23,13 @@ ActiveRecord::Schema.define(version: 20180201042508) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
-    t.integer "user_charity_id"
+    t.bigint "user_charity_id"
     t.index ["user_charity_id"], name: "index_donations_on_user_charity_id"
   end
 
   create_table "user_charities", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "charity_id"
+    t.bigint "user_id"
+    t.bigint "charity_id"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,6 +44,10 @@ ActiveRecord::Schema.define(version: 20180201042508) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
+
   end
 
+  add_foreign_key "donations", "user_charities"
+  add_foreign_key "user_charities", "charities"
+  add_foreign_key "user_charities", "users"
 end

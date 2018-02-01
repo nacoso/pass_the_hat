@@ -3,10 +3,6 @@ class User < ApplicationRecord
   has_many :user_charities
   validates :password_digest, presence: true
 
+  # User::SUBSCRIPTION_PLANS
 
-
-  SUBSCRIPTION_PLANS = [[10, "junior"] ]
 end
-
-
-# User::SUBSCRIPTION_PLANS
