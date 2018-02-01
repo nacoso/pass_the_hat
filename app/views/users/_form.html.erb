@@ -1,22 +1,56 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
+<%= form_for(@user) do |form| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+  <% end %>
       <ul>
-      <% user.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
-  </div>
+
+
+
+
+      <div class="form-group">
+            <%= form.label :first_name %>
+            <div class="input-group pb-modalreglog-input-group">
+                <input type="name" class="form-control" id="name" placeholder="First Name"<%= form.text_field :first_name, id: :first_name %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            </div>
+        </div>
+        <div class="form-group">
+              <%= form.label :last_name %>
+              <div class="input-group pb-modalreglog-input-group">
+                  <input type="name" class="form-control" id="name" placeholder="Last Name"<%= form.text_field :last_name, id: :last_name %>
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              </div>
+          </div>
+
+      <div class="form-group">
+          <%= form.label :email_Address %>
+          <div class="input-group pb-modalreglog-input-group">
+              <input type="email" class="form-control" id="email" placeholder="Email"<%= form.text_field :email, id: :email %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+          </div>
+      </div>
+      <div class="form-group">
+            <%= form.label :password %>
+          <div class="input-group pb-modalreglog-input-group">
+              <input type="password" class="form-control" id="password_digest" placeholder="Password" "<%= form.text_field :password_digest, id: :password_digest %>">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          </div>
+      </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+</div>
+</div>
+</div>
