@@ -172,10 +172,10 @@ color: #fff !important;
 font-size: 20px;
 font-variant: inherit;
 font-family: Montserrat, sans-serif;
-background-color: hsla(248, 53%, 58%, 1.0);
+background-color: hsla(248, 53%, 58%, 0);
 font-kerning: auto;
 font-variant-ligatures: normal;
-display:
+width:100%;
 
 }
 #menu, #menu:hover, #menu:active, #menu li > a {
@@ -265,17 +265,101 @@ footer .glyphicon {
     border-radius: 2px;
 }
 
+.hero{
+
+	position: relative;
+	justify-content: center;
+	min-height: 100vh;
+	color: #fff;
+	text-align: center;
+}
+
+.hero .background-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-color: #2196F3;
+	z-index: -1;
+}
+
+.hero .background-image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #414a4f;
+	opacity: 0.75;
+}
+
+.hero h1{
+	font: bold 60px 'Open Sans', sans-serif;
+	margin-bottom: 15px;
+  padding-top: 20%;
+}
+
+.hero h3{
+	font: normal 28px 'Open Sans', sans-serif;
+	margin-bottom: 40px;
+}
+
+.hero a.btn{
+	padding: 20px 46px;
+}
+
+@media (max-width: 800px){
+
+	.hero{
+		min-height: 600px;
+	}
+
+	.hero h1{
+		font-size: 48px;
+	}
+
+	.hero h3{
+		font-size: 24px;
+	}
+
+	.hero a.btn{
+		padding: 15px 40px;
+	}
+
+}
+
 
 
 </style>
 </head>
 
 
+    <!-- <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
+        <h1 class="text-uppercase mb-0">Pass the Hat</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">the user-friendly platform for charitable giving</h2>
+      </div>
+      <ul class="nav navbar-nav navbar-right" style="margin:0px;border:0px;padding:0px;">
+        <li>
+                  <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
+                  <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal2">Register</button>
+                </li>
+      </ul>
+    </header> -->
 
-<div class="navbar navbar-nav" id="myNavbar"style="center">
-<h1>Pass the Hat</h1>
-<p>being good should be easy</p>
-<ul class="nav navbar-nav navbar-right" style="margin-top:0px;border-top:0px;padding-top:0px;margin-right:0px;border-right:0%;padding-bottom:10px;">
+    <section class="hero">
+    		<div class="background-image" style="background-image: url(assets/img/hero.jpg);"></div>
+    		<h1>Pass the Hat</h1>
+    		<h3>the user-friendly platform for charitable giving</h3>
+    		<button class=class="btn-lg btnm-lg"><a href="#mains" title="To Top">Find Out More</a></button>
+    	</section>
+  <br>
+<ul class="nav navbar-nav navbar-right" style="margin:0px;border:0px;padding:0px;">
   <li>
             <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
             <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal2">Register</button>
@@ -283,8 +367,8 @@ footer .glyphicon {
 </ul>
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
+
+                <div class="modal-dialog">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;></span>
@@ -292,7 +376,7 @@ footer .glyphicon {
                         <h4 class="modal-title" id="myModalLabel">Login form</h4>
                     </div>
                     <div class="modal-body">
-                        <form>
+
                             <div class="form-group">
                                 <label for="email">Email address</label>
                                 <div class="input-group pb-modalreglog-input-group">
@@ -316,8 +400,8 @@ footer .glyphicon {
                   </div>
               </div>
           </div>
-        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="modal-lg" style="padding:20px;">
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <div class="modal-dialog modal-md" role="modal-lg" style="padding:20px;">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -326,56 +410,66 @@ footer .glyphicon {
                         <h4 class="modal-title" id="myModalLabel">Registration form</h4>
                     </div>
                     <div class="modal-body">
-                      <%= form_with(model: @user, local: true) do |form| %>
+                      <%= form_for(@user) do |form| %>
                         <% if @user.errors.any? %>
                           <div id="error_explanation">
                             <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+                        <% end %>
                             <ul>
                             <% @user.errors.full_messages.each do |message| %>
                               <li><%= message %></li>
                             <% end %>
                             </ul>
                           </div>
-                        <% end %>
-
-
-
-
                             <div class="form-group">
-                              <div class="field">
-                                <%= form.label :name %>
-                                <%= form.text_field :name, id: :user_name %>
+
+                                  <div class="input-group pb-modalreglog-input-group">
+                                      <input type="name" class="form-control" id="name" placeholder="First Name"<%= form.text_field :first_name, id: :first_name %>
+
+                                  </div>
                               </div>
-                            </div>
-                            div class="form-group">
-                                <label for="email">Email address</label>
+                              <div class="form-group">
+
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <input type="name" class="form-control" id="name" placeholder="Last Name"<%= form.text_field :last_name, id: :last_name %>
+
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+
                                 <div class="input-group pb-modalreglog-input-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="email" class="form-control" id="email" placeholder="Email"<%= form.text_field :email, id: :email %>
+
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <div class="input-group pb-modalreglog-input-group">
-                                    <input type="password" class="form-control" id="pws" placeholder="Password">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                              <div class="input-group pb-modalreglog-input-group">
+                                  <input type="password" class="form-control" id="password_digest" placeholder="Password" <%= form.text_field :password_digest, id: :password_digest %>
                                 </div>
                             </div>
-                            <
+                            <div class="form-group">
+
+                                <div class="input-group pb-modalreglog-input-group">
+                                    <input type="password" class="form-control" id="password_digest" placeholder="Confirm Password" <%= form.text_field :password_digest, id: :password_digest %>
+
+                                </div>
+                            </div>
+
+<br><br>
 
                         <div class="actions">
                           <%= form.submit %>
                         </div>
                       <% end %>
-                        </form>
+
                     </div>
-
-
+</div>
+</div>
   <!-- <button class="panel-title btn-lg text-center align-center" style="height:50%; width:100%; color:black"><%= link_to "Single Donation", new_donation_path %></button><button class="panel-title btn-lg text-center align-center" style="height:50%; width:100%; color:black"><%= link_to 'Monthly Donation ', new_recurring_path %></button> -->
-</h3>
+<!-- </h3>
 </div></div></ul>
-      <ul class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav navbar-left"> -->
         <!-- <li class="dropdown"><a class="navbar-toggle" data-toggle="dropdown" href="#" id="menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#about">ABOUT US</a></li>
@@ -383,9 +477,9 @@ footer .glyphicon {
               <li><a href="#contact">CONTACT</a></li>
             </ul>
         </li> -->
-      </ul>
+      <!-- </ul>
 
-              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <! <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
 
@@ -396,8 +490,8 @@ footer .glyphicon {
           <!-- </div>
         </div>
       </div> -->
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
   <!-- <div class="modal" id="myModal3" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -459,29 +553,72 @@ $('#myModal'). modal( options).
 
 
   })
+
+  $('#myModal'). modal( options).
+        $("#myModal4").on(fade, function(){
+                $("#myModal").modal("hide");
+            });
+        $('#ch').change(function () {
+            if ($('input[name="chs"]:checked').length > 0) {
+                progress.value(progress.value() + 25);
+            } else {
+                progress.value(progress.value() - 25);
+            }
+        });
+
+        $('#myModal'). modal( options).
+              $("#myModal4").on(fade, function(){
+                      $("#myNavbar").modal("hide");
+                  });
+              $('#ch').change(function () {
+                  if ($('input[name="chs"]:checked').length > 0) {
+                      progress.value(progress.value() + 25);
+                  } else {
+                      progress.value(progress.value() - 25);
+                  }
+              });
+
+
+          })
+    })
+    $('#myModal'). modal( options).
+          $("#myModal3").on(fade, function(){
+                  $("#myNavbar").modal("hide");
+              });
+          $('#ch').change(function () {
+              if ($('input[name="chs"]:checked').length > 0) {
+                  progress.value(progress.value() + 25);
+              } else {
+                  progress.value(progress.value() - 25);
+              }
+          });
+
+
+      })
+
 </script>
 </div>
 
 </nav>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 <div class="row">
-    <div class="container-fluid" style="display: flex;margin:0px;border:0px;width:100%">
+    <div class="container-fluid" style="display: flex;margin:0px;border:0px;width:100%" id="mains">
         <div class="jumbotron text-center col-md-5">
           <h1>Donators</h1><br>
           <p><i>donations made simple</span></i></p>
 
-        <br><br><button class="btn btn-lg"><%= link_to 'Explore our platform today', controller: "charities", action: "welcome"%></button>
+          <br><br><button class="btn btn-lg" data-toggle="modal" data-target="#myModal2" style="color:#337ab7">Register</button>
+
         </div>
+
         <div class="panel-lg col-md-2">
         </div>
         <div class="jumbotron text-center col-md-5">
           <h1>Charities</h1><br>
           <p><i>we can help you connect to clients</span></i></p>
+  <br><button class="btn btn-lg"><%= link_to 'Explore our platform today', controller: "charities", action: "welcome"%></button>
 
-        <br><br><button class="btn btn-lg" data-toggle="modal" data-target="#myModal2" style="color:#555">Register</button>
-        </div>
 
-    </div>
 </div>
         <br><br><br>
 </div>
@@ -499,7 +636,7 @@ $('#myModal'). modal( options).
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner jumbotron" role="combobox"style="">
+      <div class="carousel-inner jumbotron" style="background-color: hsla(248, 53%, 58%, 0);width:100%;">
         <div class="item active">
           <h2>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h2><br><br><br>
         </div>
@@ -538,7 +675,7 @@ $('#myModal'). modal( options).
 </div>
 <br>
   <br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 
 
 
@@ -577,7 +714,7 @@ $('#myModal'). modal( options).
 <script>
 $(window).ready(function(){
 // Add smooth scrolling to all links in navbar + footer link
-$(".navbar a, footer a[href='#top'], .btn a").on('click', function(event) {
+$(".navbar a, footer a[href='#top'], .btn a, section a[href='#mains']").on('click', function(event) {
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
     // Prevent default anchor click behavior
