@@ -172,10 +172,10 @@ color: #fff !important;
 font-size: 20px;
 font-variant: inherit;
 font-family: Montserrat, sans-serif;
-background-color: hsla(248, 53%, 58%, 1.0);
+background-color: hsla(248, 53%, 58%, 0);
 font-kerning: auto;
 font-variant-ligatures: normal;
-display:
+width:100%;
 
 }
 #menu, #menu:hover, #menu:active, #menu li > a {
@@ -292,7 +292,7 @@ footer .glyphicon {
                         <h4 class="modal-title" id="myModalLabel">Login form</h4>
                     </div>
                     <div class="modal-body">
-                        <form>
+
                             <div class="form-group">
                                 <label for="email">Email address</label>
                                 <div class="input-group pb-modalreglog-input-group">
@@ -326,56 +326,66 @@ footer .glyphicon {
                         <h4 class="modal-title" id="myModalLabel">Registration form</h4>
                     </div>
                     <div class="modal-body">
-                      <%= form_with(model: @user, local: true) do |form| %>
+                      <%= form_for(@user) do |form| %>
                         <% if @user.errors.any? %>
                           <div id="error_explanation">
                             <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+                        <% end %>
                             <ul>
                             <% @user.errors.full_messages.each do |message| %>
                               <li><%= message %></li>
                             <% end %>
                             </ul>
                           </div>
-                        <% end %>
+
 
 
 
 
                             <div class="form-group">
-                              <div class="field">
-                                <%= form.label :name %>
-                                <%= form.text_field :name, id: :user_name %>
+                                  <%= form.label :first_name %>
+                                  <div class="input-group pb-modalreglog-input-group">
+                                      <input type="name" class="form-control" id="name" placeholder="First Name"<%= form.text_field :first_name, id: :first_name %>
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                  </div>
                               </div>
-                            </div>
-                            div class="form-group">
-                                <label for="email">Email address</label>
+                              <div class="form-group">
+                                    <%= form.label :last_name %>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <input type="name" class="form-control" id="name" placeholder="Last Name"<%= form.text_field :last_name, id: :last_name %>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                                <%= form.label :email_Address %>
                                 <div class="input-group pb-modalreglog-input-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Email"<%= form.text_field :email, id: :email %>
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                  <%= form.label :password %>
                                 <div class="input-group pb-modalreglog-input-group">
-                                    <input type="password" class="form-control" id="pws" placeholder="Password">
+                                    <input type="password" class="form-control" id="password_digest" placeholder="Password" "<%= form.text_field :password_digest, id: :password_digest %>">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                                 </div>
                             </div>
-                            <
+
+
 
                         <div class="actions">
                           <%= form.submit %>
                         </div>
                       <% end %>
-                        </form>
+
                     </div>
-
-
+</div>
+</div>
   <!-- <button class="panel-title btn-lg text-center align-center" style="height:50%; width:100%; color:black"><%= link_to "Single Donation", new_donation_path %></button><button class="panel-title btn-lg text-center align-center" style="height:50%; width:100%; color:black"><%= link_to 'Monthly Donation ', new_recurring_path %></button> -->
-</h3>
+<!-- </h3>
 </div></div></ul>
-      <ul class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav navbar-left"> -->
         <!-- <li class="dropdown"><a class="navbar-toggle" data-toggle="dropdown" href="#" id="menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#about">ABOUT US</a></li>
@@ -383,9 +393,9 @@ footer .glyphicon {
               <li><a href="#contact">CONTACT</a></li>
             </ul>
         </li> -->
-      </ul>
+      <!-- </ul>
 
-              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <! <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
 
@@ -396,8 +406,8 @@ footer .glyphicon {
           <!-- </div>
         </div>
       </div> -->
-    </div>
-  </div>
+    <!-- </div>
+  </div> --> -->
   <!-- <div class="modal" id="myModal3" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -459,11 +469,54 @@ $('#myModal'). modal( options).
 
 
   })
+
+  $('#myModal'). modal( options).
+        $("#myModal4").on(fade, function(){
+                $("#myModal").modal("hide");
+            });
+        $('#ch').change(function () {
+            if ($('input[name="chs"]:checked').length > 0) {
+                progress.value(progress.value() + 25);
+            } else {
+                progress.value(progress.value() - 25);
+            }
+        });
+
+        $('#myModal'). modal( options).
+              $("#myModal4").on(fade, function(){
+                      $("#myNavbar").modal("hide");
+                  });
+              $('#ch').change(function () {
+                  if ($('input[name="chs"]:checked').length > 0) {
+                      progress.value(progress.value() + 25);
+                  } else {
+                      progress.value(progress.value() - 25);
+                  }
+              });
+
+
+          })
+    })
+    $('#myModal'). modal( options).
+          $("#myModal3").on(fade, function(){
+                  $("#myNavbar").modal("hide");
+              });
+          $('#ch').change(function () {
+              if ($('input[name="chs"]:checked').length > 0) {
+                  progress.value(progress.value() + 25);
+              } else {
+                  progress.value(progress.value() - 25);
+              }
+          });
+
+
+      })
+
 </script>
 </div>
 
 </nav>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 <div class="row">
     <div class="container-fluid" style="display: flex;margin:0px;border:0px;width:100%">
         <div class="jumbotron text-center col-md-5">
@@ -499,7 +552,7 @@ $('#myModal'). modal( options).
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner jumbotron" role="combobox"style="">
+      <div class="carousel-inner jumbotron" style="background-color: hsla(248, 53%, 58%, 0);width:100%;">
         <div class="item active">
           <h2>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h2><br><br><br>
         </div>
@@ -538,7 +591,7 @@ $('#myModal'). modal( options).
 </div>
 <br>
   <br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 
 
 
