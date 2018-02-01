@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails'
+gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-stripe-connect'
 gem 'devise'
