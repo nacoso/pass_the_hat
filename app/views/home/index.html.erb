@@ -265,15 +265,100 @@ footer .glyphicon {
     border-radius: 2px;
 }
 
+.hero{
+
+	position: relative;
+	justify-content: center;
+	min-height: 100vh;
+	color: #fff;
+	text-align: center;
+}
+
+.hero .background-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-color: #2196F3;
+	z-index: -1;
+}
+
+.hero .background-image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #414a4f;
+	opacity: 0.75;
+}
+
+.hero h1{
+	font: bold 60px 'Open Sans', sans-serif;
+	margin-bottom: 15px;
+  padding-top: 20%;
+}
+
+.hero h3{
+	font: normal 28px 'Open Sans', sans-serif;
+	margin-bottom: 40px;
+}
+
+.hero a.btn{
+	padding: 20px 46px;
+}
+
+@media (max-width: 800px){
+
+	.hero{
+		min-height: 600px;
+	}
+
+	.hero h1{
+		font-size: 48px;
+	}
+
+	.hero h3{
+		font-size: 24px;
+	}
+
+	.hero a.btn{
+		padding: 15px 40px;
+	}
+
+}
+
 
 
 </style>
 </head>
 
 
+    <!-- <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
+        <h1 class="text-uppercase mb-0">Pass the Hat</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">the user-friendly platform for charitable giving</h2>
+      </div>
+      <ul class="nav navbar-nav navbar-right" style="margin:0px;border:0px;padding:0px;">
+        <li>
+                  <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
+                  <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal2">Register</button>
+                </li>
+      </ul>
+    </header> -->
 
-<div class="navbar navbar-default text-center" id="myNavbar"style="text-center; height:100px;">
-<h1>Pass the Hat</h1>
+    <section class="hero">
+    		<div class="background-image" style="background-image: url(assets/img/hero.jpg);"></div>
+    		<h1>Pass the Hat</h1>
+    		<h3>the user-friendly platform for charitable giving</h3>
+    		<button class=class="btn-lg btnm-lg"><a href="#mains" title="To Top">Find Out More</a></button>
+    	</section>
+  <br>
 <ul class="nav navbar-nav navbar-right" style="margin:0px;border:0px;padding:0px;">
   <li>
             <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
@@ -517,23 +602,23 @@ $('#myModal'). modal( options).
 </nav>
 <br><br><br><br>
 <div class="row">
-    <div class="container-fluid" style="display: flex;margin:0px;border:0px;width:100%">
+    <div class="container-fluid" style="display: flex;margin:0px;border:0px;width:100%" id="mains">
         <div class="jumbotron text-center col-md-5">
           <h1>Donators</h1><br>
           <p><i>donations made simple</span></i></p>
 
-        <br><br><button class="btn btn-lg"><%= link_to 'Explore our platform today', controller: "charities", action: "welcome"%></button>
+          <br><br><button class="btn btn-lg" data-toggle="modal" data-target="#myModal2" style="color:#337ab7">Register</button>
+
         </div>
+
         <div class="panel-lg col-md-2">
         </div>
         <div class="jumbotron text-center col-md-5">
           <h1>Charities</h1><br>
           <p><i>we can help you connect to clients</span></i></p>
+  <br><button class="btn btn-lg"><%= link_to 'Explore our platform today', controller: "charities", action: "welcome"%></button>
 
-        <br><br><button class="btn btn-lg" data-toggle="modal" data-target="#myModal2" style="color:#555">Register</button>
-        </div>
 
-    </div>
 </div>
         <br><br><br>
 </div>
@@ -629,7 +714,7 @@ $('#myModal'). modal( options).
 <script>
 $(window).ready(function(){
 // Add smooth scrolling to all links in navbar + footer link
-$(".navbar a, footer a[href='#top'], .btn a").on('click', function(event) {
+$(".navbar a, footer a[href='#top'], .btn a, section a[href='#mains']").on('click', function(event) {
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
     // Prevent default anchor click behavior
