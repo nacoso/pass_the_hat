@@ -30,12 +30,14 @@ class CharitiesController < ApplicationController
   # POST /charities
   # POST /charities.json
   def create
+
     charity = Charity.new(charity_params)
     if charity.save
       session[:charity_id] = charity.id
       redirect_to '/'
     else
       redirect_to '/charities/signup'
+
     end
   end
 
