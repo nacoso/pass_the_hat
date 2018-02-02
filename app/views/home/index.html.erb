@@ -278,6 +278,7 @@ footer .glyphicon {
 <ul class="nav navbar-nav navbar-right" style="margin-top:0px;border-top:0px;padding-top:0px;margin-right:0px;border-right:0%;padding-bottom:10px;">
   <li>
             <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal">Login</button>
+
             <button class="btn btn-primary pb-modalreglog-submit" data-toggle="modal" data-target="#myModal2">Register</button>
           </li>
 </ul>
@@ -474,11 +475,16 @@ $('#myModal'). modal( options).
         </div>
         <div class="panel-lg col-md-2">
         </div>
-        <div class="jumbotron text-center col-md-5">
-          <h1>Charities</h1><br>
-          <p><i>we can help you connect to clients</span></i></p>
 
-        <br><br><button class="btn btn-lg" data-toggle="modal" data-target="#myModal2" style="color:#555">Register</button>
+        <div class="jumbotron text-center col-md-5">
+          <h1>PtH Partners</h1><br>
+          <p><i>By connecting to PtH's platform, organizations and inviduals will have access to its Giver Network, and streamlined payments process.</span></i></p>
+
+        <br><br>
+        <button class="btn btn-primary pb-modalreglog-submit" href="charities/new.html.erb" style="color:#555">Create Account</button>
+
+
+        <br><br><button class="btn btn-lg" data-toggle="modal" data-target="#myModal2" style="color:#555">Login to Existing</button>
         </div>
 
     </div>

@@ -1,5 +1,11 @@
+<script src="app/assets/javascripts/charities.js"></script>
+
 <h1>New Charity</h1>
 
-<%= render 'form', charity: @charity %>
+<ul>
+  <li><%=@charity.name %></li>
+</ul>
+
+<!-- <%= render 'form', charity: @charity %> -->
 
 <%= link_to 'Back', charities_path %>

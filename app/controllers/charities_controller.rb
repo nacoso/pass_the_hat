@@ -13,7 +13,7 @@ class CharitiesController < ApplicationController
   end
 
   def welcome
-  end 
+  end
 
   # GET /charities/new
   def new
@@ -31,6 +31,11 @@ class CharitiesController < ApplicationController
   # POST /charities.json
   def create
     @charity = Charity.new(charity_params)
+    @stripe_account = Stripe::Account.create(
+      :type => 'standard',
+      :country => 'US',
+      :email => @charity.email
+    )
 
     respond_to do |format|
       if @charity.save
