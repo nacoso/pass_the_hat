@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @user_charities.each do |user_charity| %>
+    <% user_charities.each do |user_charity| %>
       <tr>
         <td><%= link_to 'Show', user_charity %></td>
         <td><%= link_to 'Edit', edit_user_charity_path(user_charity) %></td>
