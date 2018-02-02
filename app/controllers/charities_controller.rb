@@ -30,21 +30,14 @@ class CharitiesController < ApplicationController
   # POST /charities
   # POST /charities.json
   def create
-    @charity = Charity.new(charity_params)
-    @stripe_account = Stripe::Account.create(
-      :type => 'standard',
-      :country => 'US',
-      :email => @charity.email
-    )
 
-    respond_to do |format|
-      if @charity.save
-        format.html { redirect_to @charity, notice: 'Charity was successfully created.' }
-        format.json { render :show, status: :created, location: @charity }
-      else
-        format.html { render :new }
-        format.json { render json: @charity.errors, status: :unprocessable_entity }
-      end
+    charity = Charity.new(charity_params)
+    if charity.save
+      session[:charity_id] = charity.id
+      redirect_to '/'
+    else
+      redirect_to '/charities/signup'
+
     end
   end
 
@@ -80,6 +73,6 @@ class CharitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def charity_params
-      params.fetch(:charity, {})
+      params.require(:charity).permit(:name, :email, :password, :password_confirmation)
     end
 end

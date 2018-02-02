@@ -1,11 +1,10 @@
-<script src="app/assets/javascripts/charities.js"></script>
+<!-- app/views/users/new.html.erb -->
 
-<h1>New Charity</h1>
-
-<ul>
-  <li><%=@charity.name %></li>
-</ul>
-
-<!-- <%= render 'form', charity: @charity %> -->
-
-<%= link_to 'Back', charities_path %>
+<h1>Signup!</h1>
+<%= form_for @charity, url: '/charities' do |f| %>
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+ <%= f.submit "Submit" %>
+<% end %>

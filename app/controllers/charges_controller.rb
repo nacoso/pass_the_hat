@@ -11,13 +11,11 @@ def create
     :email => params[:stripeEmail],
     :source  => params[:stripeToken]
   )
-
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
-    :currency    => 'usd'
-  )
+  plan = Stripe::Plan.retrieve("#{params[:plan]}")
+  subscription = Stripe::Subscription.create({
+     customer: customer.id,
+     plan: plan
+  })
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
