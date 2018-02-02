@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Name:</strong>
+  <%= @charity.name %>
+</p>
 <%= link_to 'Edit', edit_charity_path(@charity) %> |
 <%= link_to 'Back', charities_path %>
