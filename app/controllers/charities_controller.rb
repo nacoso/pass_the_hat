@@ -34,7 +34,7 @@ class CharitiesController < ApplicationController
     charity = Charity.new(charity_params)
     if charity.save
       session[:charity_id] = charity.id
-      redirect_to '/charities/index'
+      redirect_to charity
     else
       redirect_to '/charities/signup'
 

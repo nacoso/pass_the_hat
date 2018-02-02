@@ -5,7 +5,9 @@ class SessionsController < ApplicationController
   def create
     if params[:user_id]
       user_from_registration = User.find(params[:user_id])
-    else
+    elsif params[:charity_id]
+      user_from_registration = Charity.find(params[:charity_id])
+    else 
       user = User.find_by_email(params[:email]) || Charity.find_by_email(params[:email])
     end
     # If the user exists AND the password entered is correct.
