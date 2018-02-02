@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
       # Save the user id inside the browser cookie. This is how we keep the user logged in when they navigate around our website.
       user ||= user_from_registration
       session["#{user.class.to_s.downcase}_id".to_sym] = user.id
-
       redirect_to user
     else
     # If user's login doesn't work, send them back to the login form.
@@ -26,7 +25,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     session[:charity_id] = nil
-    redirect_to '/login'
+    redirect_to '/'
   end
 
 end
