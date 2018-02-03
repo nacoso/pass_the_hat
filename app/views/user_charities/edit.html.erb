@@ -1,6 +1,9 @@
 <h1>Editing your Account</h1>
+<div class="jumbotron">
+  <div class="panel-med" style="overflow:scroll; max-height:100px;">
+    <%= render 'form', user_charity: @user_charity %>
 
-<%= render 'form', user_charity: @user_charity %>
-
-<%= link_to 'Show', @user_charity %> |
-<%= link_to 'Back', user_charities_path %>
+    <%= link_to 'Show', @user_charity %> |
+    <%= link_to 'Back', user_charities_path %>
+  </div>
+</div>

@@ -1,7 +1,13 @@
 <%= form_for @charity, url: '/' do |f| %>
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <ul style="list-item-style:none">
+  <li>Name: <%= f.text_field :name %></li>
+  <br>
+  <li>Email: <%= f.text_field :email %></li>
+  <br>
+  <li>Password: <%= f.password_field :password %></li>
+  <br>
+  <li>Password Confirmation: <%= f.password_field :password_confirmation %></li>
+  <br>
+</ul>
  <%= f.submit "Submit" %>
 <% end %>

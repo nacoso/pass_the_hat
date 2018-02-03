@@ -1,5 +1,7 @@
 <h1>Edit your Account</h1>
-
-<%= render 'form', charity: @charity %>
-
+<div class="container-fluid">
+  <div class="panel-lg" style="overflow:scroll; max-height:100px; background-color:white">
+    <%= render 'form', charity: @charity %>
+  </div>
+</div>
 <%= link_to 'Back', @charity %>
