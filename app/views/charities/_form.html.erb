@@ -1,4 +1,15 @@
-<%= form_for @charity, url: '/' do |f| %>
+<%= form_with(model: charity, local: true) do |f| %>
+  <% if charity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user_charity from being saved:</h2>
+
+      <ul>
+      <% charity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <ul style="list-item-style:none">
   <li>Name: <%= f.text_field :name %></li>
   <br>
