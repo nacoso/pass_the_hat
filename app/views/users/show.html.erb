@@ -1,15 +1,30 @@
 <div class="navbar-nav navbar-right" id="myNavbar">
   <%=link_to "Log Out", logout_path, class:"btn btn-lg"%>
-</div>
-
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
   <strong>Name:</strong>
   <%= @user.name %>
-</p>
+</div>
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+  <h2>Charities Where You Currently Contribute</h2>
+  <div class="panel-med">
+    <%= render 'charities/index', charities: @user.charities %>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2>Other Charities</h2>
+  <div class="panel-med">
+    <%= render 'charities/index', charities: Charity.all %>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2>Donations</h2>
+  <div class="panel-med">
+    <%= render 'charities/index', charities: @user.donations %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
