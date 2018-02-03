@@ -1,10 +1,18 @@
-<div class="navbar-nav navbar-right" id="myNavbar">
+<div class="navbar-nav navbar-right" id="myNavbar", style="background-color:white">
   <%=link_to "Log Out", logout_path, class:"btn btn-lg"%>
-</div>
+  <%= link_to 'Account', edit_charity_path(@charity), class:"btn btn-lg" %>
+  <%= link_to 'Home', '/', class:"btn btn-lg" %>
+  </div>
+<br><br>
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Name:</strong>
   <%= @charity.name %>
 </p>
-<%= link_to 'Edit', edit_charity_path(@charity) %> |
-<%= link_to 'Back', charities_path %>
+
+<div class="jumbotron">
+  <h2>Registered Users</h2>
+  <div class="panel-med">
+    <%= render 'charities/index', charities: @charity.users %>
+  </div>
+</div>
