@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do |i|
-  User.create(name: "User #{i}")
+  User.create(first_name: "User #{i}")
 end
 
 5.times do |c|
