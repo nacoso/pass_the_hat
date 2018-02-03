@@ -21,8 +21,8 @@ def create
     flash[:error] = e.message
     redirect_to new_charge_path
   end
-  
-  user = User.find(params[:user_id])
-  redirect_to user
+
+  # user = User.find(params[:user_id])
+  # redirect_to user
 
 end

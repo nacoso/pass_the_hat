@@ -5,7 +5,8 @@
 
 <%= form_for @user, url: '/users' do |f| %>
   <ul>
-    <li>Name: <%= f.text_field :name %></li><br>
+    <li>First Name: <%= f.text_field :first_name %></li><br>
+    <li>Last Name: <%= f.text_field :last_name %></li><br>
     <li>Email: <%= f.text_field :email %></li><br>
     <li>Password: <%= f.password_field :password %></li><br>
     <li>Password Confirmation: <%= f.password_field :password_confirmation %></li><br>

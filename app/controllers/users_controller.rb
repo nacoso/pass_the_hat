@@ -24,6 +24,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     user = User.new(user_params)
+    #for printing errors on server output
+    # p user.valid?
+    # p user.errors.full_messages
     if user.save
       session[:user_id] = user.id
       redirect_to "/login_new_user?user_id=#{user.id}"
@@ -65,6 +68,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 end
