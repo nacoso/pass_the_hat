@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202231231) do
+ActiveRecord::Schema.define(version: 20180204073011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20180202231231) do
     t.integer "amount"
     t.bigint "user_charity_id"
     t.index ["user_charity_id"], name: "index_donations_on_user_charity_id"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "card_token"
   end
 
   create_table "user_charities", force: :cascade do |t|
