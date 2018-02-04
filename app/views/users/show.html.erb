@@ -1,9 +1,11 @@
-<div class="navbar-nav navbar-right" id="myNavbar">
+<div class="navbar-nav navbar-right" id="myNavbar", style="background-color:white">
   <%=link_to "Log Out", logout_path, class:"btn btn-lg"%>
+  <%= link_to 'Account', edit_user_path(@user), class:"btn btn-lg" %>
+  <%= link_to 'Home', '/', class:"btn btn-lg" %>
   </div>
-
+<br><br>
 <p id="notice"><%= notice %></p>
-
+<br><br>
 <p>
   <strong>Name:</strong>
   <%= @user.first_name %>
@@ -33,6 +35,3 @@
 <form action="/charges/new">
     <input type="submit" value="Donate" />
 </form>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

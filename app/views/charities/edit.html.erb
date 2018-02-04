@@ -1,6 +1,7 @@
-<h1>Editing Charity</h1>
-
-<%= render 'form', charity: @charity %>
-
-<%= link_to 'Show', @charity %> |
-<%= link_to 'Back', charities_path %>
+<h1>Edit your Account</h1>
+<div class="container-fluid" style="background-color:grey">
+  <div class="panel-lg" style="overflow:scroll; background-color:white">
+    <%= render 'form', charity: @charity %>
+  </div>
+</div>
+<%= link_to 'Back', @charity %>
